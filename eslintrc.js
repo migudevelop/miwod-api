@@ -9,6 +9,7 @@ module.exports = {
   ...baseConfig,
   rules: {
     ...baseConfig.rules,
+    '@typescript-eslint/space-before-function-paren': RULES.OFF,
     '@typescript-eslint/no-floating-promises': RULES.OFF,
     '@typescript-eslint/strict-boolean-expressions': RULES.OFF
   }
