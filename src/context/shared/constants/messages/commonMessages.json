@@ -7,5 +7,7 @@
   "NOT_VALID_EXTENSION": "Not uploaded file, not valid file extensión",
   "FILE_NOT_EXISTS": "This file doesn't exists",
   "NO_DATA": "There is no data with those search.",
-  "INCORRET_DATA_VALIDATION": "Data validation is incorrect, please try again."
+  "INCORRET_DATA_VALIDATION": "Data validation is incorrect, please try again.",
+  "ENCRIPTED_ERROR": "Error occurred when encrypted password",
+  "DECRIPTED_ERROR": "Error occurred when decrypted password"
 }

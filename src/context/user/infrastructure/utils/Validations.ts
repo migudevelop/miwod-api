@@ -1,12 +1,12 @@
 import validator from 'validator'
-import { UserEntity, LoginEntity } from '@user/domain/index'
+import { UserEntity, LoginEntityParams } from '@user/domain/index'
 const { isEmpty, isEmail } = validator
 
 export default class Validations {
   public validateUserLoginParams({
     email = '',
     password = ''
-  }: LoginEntity): boolean {
+  }: LoginEntityParams): boolean {
     try {
       const validateEmail: boolean = !isEmpty(email) && isEmail(email)
       const validatePassword: boolean = !isEmpty(password)

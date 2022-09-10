@@ -21,8 +21,12 @@ export interface IEPayloadJwt extends UserEntity {
   exp?: number | string
 }
 
-export interface IERequest extends Request {
+export interface UserRequestEntity extends Request {
   user?: UserEntity | undefined
 }
 
-export type LoginEntity = Pick<UserEntity, 'email' | 'password'>
+export type LoginEntityParams = Pick<UserEntity, 'email' | 'password'>
+
+export interface UserIdEntityParams {
+  params: { userId: string }
+}
