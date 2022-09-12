@@ -3,9 +3,16 @@ import {
   UserEntity,
   LoginEntityParams
 } from '@user/domain/index'
-import { LoginUser, GetUser, ListUsers } from '@user/application/useCases/index'
-import { ResponseMessage } from '@shared/infrastructure/utils/index'
+import {
+  LoginUser,
+  GetUser,
+  ListUsers,
+  CreateUser,
+  DeleteUser
+} from '@user/application/useCases/index'
+import { UserResponseMessage } from '@user/infrastructure/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
+import { Jwt } from '@shared/infrastructure/utils'
 
 export default class UserUseCases {
   private readonly userRepository: UserRepository
@@ -16,16 +23,37 @@ export default class UserUseCases {
 
   async login(
     userParams: LoginEntityParams,
-    responseMessage: ResponseMessage
+    responseMessage: UserResponseMessage,
+    jwt: Jwt
   ): Promise<UserEntity> {
-    return await new LoginUser(this.userRepository, responseMessage).execute(
+    return await new LoginUser(
+      this.userRepository,
+      responseMessage,
+      jwt
+    ).execute(userParams)
+  }
+
+  async createUser(
+    userParams: UserEntity,
+    responseMessage: UserResponseMessage
+  ): Promise<UserEntity | ResponseOrNullEntity> {
+    return await new CreateUser(this.userRepository, responseMessage).execute(
       userParams
+    )
+  }
+
+  async deleteUser(
+    { userId }: { userId: string },
+    responseMessage: UserResponseMessage
+  ): Promise<UserEntity | ResponseOrNullEntity> {
+    return await new DeleteUser(this.userRepository, responseMessage).execute(
+      userId
     )
   }
 
   async getUser(
     { userId }: { userId: string },
-    responseMessage: ResponseMessage
+    responseMessage: UserResponseMessage
   ): Promise<UserEntity | ResponseOrNullEntity> {
     return await new GetUser(this.userRepository, responseMessage).execute(
       userId
@@ -33,7 +61,7 @@ export default class UserUseCases {
   }
 
   async listUsers(
-    responseMessage: ResponseMessage
+    responseMessage: UserResponseMessage
   ): Promise<UserEntity[] | ResponseOrNullEntity> {
     return await new ListUsers(this.userRepository, responseMessage).execute()
   }

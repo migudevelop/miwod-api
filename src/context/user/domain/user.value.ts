@@ -6,7 +6,7 @@ export default class UserValue implements UserEntity {
   surname: string
   email: string
   password: string
-  createAt: Date
+  createAt?: Date
   role?: Roles
 
   constructor({

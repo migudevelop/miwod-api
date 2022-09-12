@@ -6,6 +6,10 @@ export default class MongoRepository implements UserRepository {
     return await User.findOne({ _id })
   }
 
+  async findAndDelete(_id: string): Promise<any> {
+    return await User.deleteOne({ _id })
+  }
+
   async findUserByEmail(email: string): Promise<any> {
     return await User.findOne({ email: email.toLowerCase() })
   }

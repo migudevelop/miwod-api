@@ -14,7 +14,7 @@ export interface UserEntity {
   surname: string
   email: string
   password: string
-  createAt: Date
+  createAt?: Date
   role?: Roles
 }
 export interface IEPayloadJwt extends UserEntity {
@@ -29,4 +29,8 @@ export type LoginEntityParams = Pick<UserEntity, 'email' | 'password'>
 
 export interface UserIdEntityParams {
   params: { userId: string }
+}
+
+export interface DeleteResponseObject {
+  deletedCount: number
 }

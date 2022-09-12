@@ -1,29 +1,30 @@
 import { UserRepository, UserEntity } from '@user/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
-import { RESPONSE_CODES, USER_MESSAGES } from '@shared/constants/index'
-import { ResponseMessage } from '@shared/infrastructure/utils/index'
+import { UserResponseMessage } from '@user/infrastructure/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class GetUser implements UserCase {
   private readonly userRepository: UserRepository
-  private readonly responseMessage: ResponseMessage
+  private readonly userResponseMessage: UserResponseMessage
 
   constructor(
     userRepository: UserRepository,
-    responseMessage: ResponseMessage
+    UserResponseMessage: UserResponseMessage
   ) {
     this.userRepository = userRepository
-    this.responseMessage = responseMessage
+    this.userResponseMessage = UserResponseMessage
   }
 
   public async execute(id: string): Promise<UserEntity | ResponseOrNullEntity> {
+    let user
     try {
-      return await this.userRepository.findUserById(id)
+      user = await this.userRepository.findUserById(id)
     } catch (error) {
-      return this.responseMessage.error(
-        RESPONSE_CODES.ERRORS.SERVER_SIDE.INTERNAL_SERVER_ERROR,
-        USER_MESSAGES.ERROR_CHECK_USER_EXIST
-      )
+      return this.userResponseMessage.errorCheckingUserExist()
     }
+    if (!user) {
+      return this.userResponseMessage.errorCheckingUserExist()
+    }
+    return this.userResponseMessage.success({ user })
   }
 }

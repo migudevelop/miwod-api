@@ -1,7 +1,8 @@
 import { Response } from 'express'
 import UserUseCase from '@user/application/UserUseCase'
-import { LoginEntityParams } from '@user/domain/index'
-import { Jwt, ResponseMessage } from '@shared/infrastructure/utils/index'
+import { LoginEntityParams, UserEntity } from '@user/domain/index'
+import { Jwt } from '@shared/infrastructure/utils/index'
+import { UserResponseMessage } from '@user/infrastructure/utils/index'
 
 export default class LoginController {
   private readonly userUseCase: UserUseCase
@@ -13,10 +14,9 @@ export default class LoginController {
   login = async (
     { body }: { body: LoginEntityParams },
     res: Response
-  ): Promise<Response> => {
-    const responseMessage = new ResponseMessage(res)
+  ): Promise<UserEntity> => {
+    const responseMessage = new UserResponseMessage(res)
     const jwt = new Jwt()
-    const user = await this.userUseCase.login(body, responseMessage)
-    return res.status(200).send({ user, token: jwt.createToken(user) })
+    return await this.userUseCase.login(body, responseMessage, jwt)
   }
 }

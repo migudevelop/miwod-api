@@ -2,7 +2,7 @@
   "USER_NOT_EXIST": "User not exist",
   "ERROR_CHECK_USER_EXIST": "Error checking user duplicity",
   "ERROR_SAVING_USER": "Error saving user.",
-  "USER_ALRERY_REGISTERED": "The user is already registered",
+  "USER_ALREADY_REGISTERED": "The user is already registered",
   "INCORRECT_DATA": "Incorrect data, try later",
   "INCORRECT_CREDENTIALS": "The credentials are not correct",
   "ERROR_IDENTIFY": "Error trying to identify yourself.",
