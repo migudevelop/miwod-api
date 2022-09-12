@@ -18,6 +18,12 @@ export default class MongoRepository implements UserRepository {
     return await User.create(userIn)
   }
 
+  async updateUser(userIn: UserEntity): Promise<any> {
+    return await User.findOneAndUpdate({ email: userIn?.email }, userIn, {
+      new: true
+    })
+  }
+
   async listUsers(): Promise<any> {
     return await User.find()
   }

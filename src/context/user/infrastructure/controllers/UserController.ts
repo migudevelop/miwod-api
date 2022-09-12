@@ -19,6 +19,14 @@ export default class UserController {
     return await this.userUseCase.createUser(body, responseMessage)
   }
 
+  updateUser = async (
+    { body }: { body: UserEntity },
+    res: Response
+  ): Promise<UserEntity | ResponseOrNullEntity> => {
+    const responseMessage = new UserResponseMessage(res)
+    return await this.userUseCase.updateUser(body, responseMessage)
+  }
+
   deleteUser = async (
     { params }: UserIdEntityParams,
     res: Response

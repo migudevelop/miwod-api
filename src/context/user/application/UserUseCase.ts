@@ -8,7 +8,8 @@ import {
   GetUser,
   ListUsers,
   CreateUser,
-  DeleteUser
+  DeleteUser,
+  UpdateUser
 } from '@user/application/useCases/index'
 import { UserResponseMessage } from '@user/infrastructure/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
@@ -38,6 +39,15 @@ export default class UserUseCases {
     responseMessage: UserResponseMessage
   ): Promise<UserEntity | ResponseOrNullEntity> {
     return await new CreateUser(this.userRepository, responseMessage).execute(
+      userParams
+    )
+  }
+
+  async updateUser(
+    userParams: UserEntity,
+    responseMessage: UserResponseMessage
+  ): Promise<UserEntity | ResponseOrNullEntity> {
+    return await new UpdateUser(this.userRepository, responseMessage).execute(
       userParams
     )
   }

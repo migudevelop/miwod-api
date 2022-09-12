@@ -5,5 +5,6 @@ export default interface UserRepository {
   findAndDelete: (id: string) => Promise<DeleteResponseObject>
   findUserByEmail: (email: string) => Promise<UserEntity | null>
   createUser: (userParams: UserEntity) => Promise<UserEntity | null>
+  updateUser: (userParams: UserEntity) => Promise<UserEntity | null>
   listUsers: () => Promise<UserEntity[] | null>
 }

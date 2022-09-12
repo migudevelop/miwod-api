@@ -12,7 +12,7 @@ export const authenticated = (
   const responseMessage = new ResponseMessage(res)
   const jwt = new Jwt()
   if (!authorized) {
-    responseMessage.error(
+    return responseMessage.error(
       RESPONSE_CODES.ERRORS.CLIENT_SIDE.UNAUTHORIZED,
       COMMON_MESSAGES.UNAUTHORIZED_REQUEST
     )
