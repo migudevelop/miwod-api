@@ -1,4 +1,5 @@
-import { UserEntity, DeleteResponseObject } from './user.entity'
+import { DeleteResponseObject } from '@shared/domain'
+import { UserEntity } from './user.entity'
 
 export default interface UserRepository {
   findUserById: (id: string) => Promise<UserEntity | null>

@@ -30,7 +30,3 @@ export type LoginEntityParams = Pick<UserEntity, 'email' | 'password'>
 export interface UserIdEntityParams {
   params: { userId: string }
 }
-
-export interface DeleteResponseObject {
-  deletedCount: number
-}

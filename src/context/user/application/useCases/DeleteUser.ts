@@ -1,11 +1,10 @@
-import {
-  UserRepository,
-  UserEntity,
-  DeleteResponseObject
-} from '@user/domain/index'
+import { UserRepository, UserEntity } from '@user/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
 import { UserResponseMessage } from '@user/infrastructure/utils/index'
-import { ResponseOrNullEntity } from '@shared/domain/index'
+import {
+  ResponseOrNullEntity,
+  DeleteResponseObject
+} from '@shared/domain/index'
 
 export default class DeleteUser implements UserCase {
   private readonly userRepository: UserRepository
