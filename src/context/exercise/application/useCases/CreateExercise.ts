@@ -21,11 +21,13 @@ export default class CreateExercise implements UserCase {
 
   public async execute({
     name,
-    shortName
+    shortName,
+    type
   }: ExerciseEntity): Promise<ExerciseEntity | ResponseOrNullEntity> {
     const newExerciseValue = new ExerciseValue({
       name,
-      shortName
+      shortName,
+      type
     })
     try {
       const newExercise = await this.exerciseRepository.createExercise(

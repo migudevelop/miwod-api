@@ -1,0 +1,9 @@
+{
+  "NOT_EXIST": "Workout not exist",
+  "ERROR_CHECK_EXIST": "Error checking workout duplicity",
+  "ERROR_SAVING": "Error saving workout.",
+  "ALREADY_REGISTERED": "The workout is already registered",
+  "INCORRECT_DATA": "Incorrect data, try later",
+  "ERROR_UPDATING": "Error updating workout.",
+  "ERROR_DELETING": "Error deleting workout."
+}

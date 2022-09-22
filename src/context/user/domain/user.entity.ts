@@ -30,3 +30,5 @@ export type LoginEntityParams = Pick<UserEntity, 'email' | 'password'>
 export interface UserIdEntityParams {
   params: { userId: string }
 }
+
+export type SimpleUserDataEntity = Pick<UserEntity, '_id' | 'name'>
