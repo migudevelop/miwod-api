@@ -1,6 +1,10 @@
-import { WorkoutRepository, WorkoutEntity } from '@workout/domain/index'
+import {
+  WorkoutRepository,
+  WorkoutBodyEntityParams,
+  WorkoutEntity
+} from '@workout/domain/index'
 import { CreateWorkout } from './useCases/index'
-import { ResponseMessage } from '@shared/application/utils/index'
+import { WorkoutResponseMessage } from '@workout/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class WorkoutUseCase {
@@ -11,8 +15,8 @@ export default class WorkoutUseCase {
   }
 
   async createWorkout(
-    params: WorkoutRepository,
-    responseMessage: ResponseMessage
+    params: WorkoutBodyEntityParams,
+    responseMessage: WorkoutResponseMessage
   ): Promise<WorkoutEntity | ResponseOrNullEntity> {
     return await new CreateWorkout(
       this.workoutRepository,

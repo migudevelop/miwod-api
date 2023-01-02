@@ -1,7 +1,9 @@
 import { UserRepository, UserEntity, UserValue } from '@user/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
-import { PasswordSecurity } from '@user/application/utils/index'
-import { UserResponseMessage } from '@user/application/utils/index'
+import {
+  PasswordSecurity,
+  UserResponseMessage
+} from '@user/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class CreateUser implements UserCase {
