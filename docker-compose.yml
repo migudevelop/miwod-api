@@ -1,0 +1,28 @@
+version: "3.9"
+name: "miwod"
+services:
+  miwod-api:
+    build: .
+    ports:
+      - "3005:3005"
+    environment:
+      - PORT=3005
+      - DB_NAME=miwod-api
+      - DB_URL=mongodb://miguel:password@mongo-miwod:27017
+      - AUTH_SOURCE=admin
+      - TOKEN_SECRET=Drmhze6EPcv0fN@
+    links:
+      - mongo-miwod
+    depends_on:
+      - mongo-miwod
+  mongo-miwod:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=miguel
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:

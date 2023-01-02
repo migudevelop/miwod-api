@@ -1,0 +1,9 @@
+{
+  "NOT_EXIST": "Exercise not exist",
+  "ERROR_CHECK_EXIST": "Error checking exercise duplicity",
+  "ERROR_SAVING": "Error saving exercise.",
+  "ALREADY_REGISTERED": "The exercise is already registered",
+  "INCORRECT_DATA": "Incorrect data, try later",
+  "ERROR_UPDATING": "Error updating exercise.",
+  "ERROR_DELETING": "Error deleting exercise."
+}

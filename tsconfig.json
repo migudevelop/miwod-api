@@ -7,11 +7,20 @@
       "@src/*": [
         "*"
       ],
+      "@app/*": [
+        "app/*"
+      ],
+      "@exercise/*": [
+        "context/exercise/*"
+      ],
+      "@shared/*": [
+        "context/shared/*"
+      ],
       "@user/*": [
-        "user/*"
+        "context/user/*"
       ],
       "@workout/*": [
-        "workout/*"
+        "context/workout/*"
       ],
     },
     "resolveJsonModule": true /* Enable importing .json files */,
@@ -28,7 +37,7 @@
   },
   "include": [
     "src/**/*",
-    "source/user"
+    "src/user"
   ],
   "exclude": [
     "node_modules",
