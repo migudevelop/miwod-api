@@ -5,7 +5,7 @@ import {
   WorkoutBodyEntityParams
 } from '@workout/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
-import { WorkoutResponseMessage } from '@workout/infrastructure/utils/index'
+import { WorkoutResponseMessage } from '@workout/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class CreateExercise implements UserCase {

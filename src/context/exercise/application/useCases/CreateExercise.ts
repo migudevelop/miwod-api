@@ -4,7 +4,7 @@ import {
   ExerciseValue
 } from '@exercise/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
-import { ExerciseResponseMessage } from '@exercise/infrastructure/utils/index'
+import { ExerciseResponseMessage } from '@exercise/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class CreateExercise implements UserCase {

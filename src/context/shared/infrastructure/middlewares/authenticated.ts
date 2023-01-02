@@ -1,7 +1,10 @@
 import { Response, NextFunction } from 'express'
 import moment from 'moment'
-import { RESPONSE_CODES, COMMON_MESSAGES } from '@shared/constants/index'
-import { ResponseMessage, Jwt } from '@shared/infrastructure/utils/index'
+import {
+  RESPONSE_CODES,
+  COMMON_MESSAGES
+} from '@shared/application/constants/index'
+import { ResponseMessage, Jwt } from '@shared/application/utils/index'
 
 export const authenticated = (
   req: any,

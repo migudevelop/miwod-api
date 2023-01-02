@@ -1,8 +1,10 @@
-import { Jwt } from '@shared/infrastructure/utils/index'
+import { Jwt } from '@shared/application/utils/index'
 import { UserRepository, LoginEntityParams } from '@user/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
-import { PasswordSecurity } from '@user/application/utils/index'
-import { UserResponseMessage } from '@user/infrastructure/utils/index'
+import {
+  PasswordSecurity,
+  UserResponseMessage
+} from '@user/application/utils/index'
 
 export default class LoginUser implements UserCase {
   private readonly userRepository: UserRepository

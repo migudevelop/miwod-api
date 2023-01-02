@@ -1,8 +1,8 @@
 import { Response } from 'express'
 import UserUseCase from '@user/application/UserUseCase'
 import { LoginEntityParams, UserEntity } from '@user/domain/index'
-import { Jwt } from '@shared/infrastructure/utils/index'
-import { UserResponseMessage } from '@user/infrastructure/utils/index'
+import { Jwt } from '@shared/application/utils/index'
+import { UserResponseMessage } from '@user/application/utils/index'
 
 export default class LoginController {
   private readonly userUseCase: UserUseCase

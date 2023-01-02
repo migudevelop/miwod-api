@@ -11,9 +11,9 @@ import {
   DeleteUser,
   UpdateUser
 } from '@user/application/useCases/index'
-import { UserResponseMessage } from '@user/infrastructure/utils/index'
+import { UserResponseMessage } from '@user/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
-import { Jwt } from '@shared/infrastructure/utils'
+import { Jwt } from '@shared/application/utils/index'
 
 export default class UserUseCases {
   private readonly userRepository: UserRepository

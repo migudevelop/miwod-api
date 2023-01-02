@@ -1,6 +1,6 @@
 import { ExerciseRepository, ExerciseEntity } from '@exercise/domain/index'
 import { CreateExercise, GetExercise, ListExercises } from './useCases/index'
-import { ExerciseResponseMessage } from '@exercise/infrastructure/utils/index'
+import { ExerciseResponseMessage } from '@exercise/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class ExerciseUseCases {

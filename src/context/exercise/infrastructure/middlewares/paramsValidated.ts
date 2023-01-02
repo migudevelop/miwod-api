@@ -1,6 +1,6 @@
 import { Response, NextFunction } from 'express'
 import { ExerciseEntity } from '@exercise/domain/index'
-import { ResponseMessage } from '@shared/infrastructure/utils/index'
+import { ResponseMessage } from '@shared/application/utils/index'
 import { Validations } from '@exercise/infrastructure/utils/index'
 
 export const createValidated = (

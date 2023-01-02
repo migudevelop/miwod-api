@@ -1,6 +1,6 @@
 import { Response, NextFunction } from 'express'
 import { LoginEntityParams, UserEntity } from '@user/domain/index'
-import { ResponseMessage } from '@shared/infrastructure/utils/index'
+import { ResponseMessage } from '@shared/application/utils/index'
 import { Validations } from '@user/infrastructure/utils/index'
 
 export const loginValidated = (

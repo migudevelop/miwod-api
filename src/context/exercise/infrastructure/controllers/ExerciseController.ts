@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import ExerciseUseCase from '@exercise/application/ExerciseUseCase'
 import { ExerciseEntity, ExerciseIdEntityParams } from '@exercise/domain/index'
-import { ExerciseResponseMessage } from '@exercise/infrastructure/utils/index'
+import { ExerciseResponseMessage } from '@exercise/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain'
 
 export default class UserController {

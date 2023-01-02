@@ -1,6 +1,6 @@
 import { WorkoutRepository, WorkoutEntity } from '@workout/domain/index'
 import { CreateWorkout } from './useCases/index'
-import { ResponseMessage } from '@shared/infrastructure/utils/index'
+import { ResponseMessage } from '@shared/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class WorkoutUseCase {

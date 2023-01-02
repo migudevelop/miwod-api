@@ -1,5 +1,8 @@
 import { Response } from 'express'
-import { RESPONSE_CODES, COMMON_MESSAGES } from '@shared/constants/index'
+import {
+  RESPONSE_CODES,
+  COMMON_MESSAGES
+} from '@shared/application/constants/index'
 
 export default class ResponseMessage {
   private res: Response

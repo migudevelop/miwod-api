@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import UserUseCase from '@user/application/UserUseCase'
 import { UserIdEntityParams, UserEntity } from '@user/domain/index'
-import { UserResponseMessage } from '@user/infrastructure/utils/index'
+import { UserResponseMessage } from '@user/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain'
 
 export default class UserController {

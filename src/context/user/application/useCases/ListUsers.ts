@@ -1,6 +1,6 @@
 import { UserRepository, UserEntity } from '@user/domain/index'
 import UserCase from '@shared/application/UserCase.interface'
-import { UserResponseMessage } from '@user/infrastructure/utils/index'
+import { UserResponseMessage } from '@user/application/utils/index'
 import { ResponseOrNullEntity } from '@shared/domain/index'
 
 export default class ListUsers implements UserCase {

@@ -1,6 +1,9 @@
 import { Response } from 'express'
-import { RESPONSE_CODES, USER_MESSAGES } from '@shared/constants/index'
-import { ResponseMessage } from '@shared/infrastructure/utils/index'
+import {
+  RESPONSE_CODES,
+  USER_MESSAGES
+} from '@shared/application/constants/index'
+import { ResponseMessage } from '@shared/application/utils/index'
 
 export default class UserResponseMessage extends ResponseMessage {
   constructor(res: Response) {
